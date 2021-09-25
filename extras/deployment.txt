@@ -1,0 +1,39 @@
+BACKEND
+sudo apt install python3-pip nginx
+
+sudo groupadd --system ecommerce
+sudo useradd --system --gid ecommerce --shell /bin/bash --home /ecommerce/ecomm_back ecommerce
+
+pip install virtualenv
+
+virtualenv -p python3 venv 
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+- Place ecomm.conf in /etc/nginx/sites-enables
+- Place supervisorecomm.conf in /etc/supervisor/cond.d
+
+pip install gunicorn
+chmod +x venv/bin/gunicorn
+
+FRONTEND
+
+Install Node
+Install npm
+
+npm install
+npm build
+
+SUPERVISOR and NGINX Commands
+sudo supervisorctl reread
+sudo supervisorctl start all
+sudo supervisorctl restart all
+sudo supervisorctl stop all
+sudo service nginx restart
+
+DATABASE
+manage.py makemigrations
+manage.py migrate
+manage.py collectstatic
+manage.py createsuperuser

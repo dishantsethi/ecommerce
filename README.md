@@ -1,6 +1,7 @@
 # Ecommerce
 
-[ec2-13-229-56-73.ap-southeast-1.compute.amazonaws.com](http://ec2-13-229-56-73.ap-southeast-1.compute.amazonaws.com/)
+[http://34.131.45.81/](http://34.131.45.81/)
+~~[ec2-13-229-56-73.ap-southeast-1.compute.amazonaws.com](http://ec2-13-229-56-73.ap-southeast-1.compute.amazonaws.com/)~~
 
 # Contributing
 

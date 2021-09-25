@@ -110,6 +110,8 @@
                     <hr>
 
                     <button class="button is-dark" @click="submitForm">Pay with Stripe</button>
+                    <hr>
+                    <p>Use Dummy card: 4242424242424242, 07/27, 123</p>
                 </template>
             </div>
         </div>

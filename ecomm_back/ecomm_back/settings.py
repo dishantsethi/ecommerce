@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', False)
-
+IP = env.str('IP')
 ALLOWED_HOSTS = ['*']
 
 STRIPE_SECRET_KEY = env.str('STRIPE_SECRET_KEY')
@@ -54,8 +54,14 @@ INSTALLED_APPS = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8081'
+    '*'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,6 +143,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR + '/staticfiles'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + '/media/'
 # Default primary key field type
